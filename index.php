@@ -13,7 +13,7 @@ $app = App::get();
 $context = $app->contexts->get(__DIR__);
 
 $app->clientPackages
-    ->add('escapeKey', function (IvoPetkov\BearFrameworkAddons\ClientPackage $package) use ($context) {
+    ->add('escapeKey', function (IvoPetkov\BearFrameworkAddons\ClientPackage $package) use ($context): void {
         $package->addJSCode(include $context->dir . '/assets/escapeKey.min.js.php');
         //$package->addJSCode(file_get_contents($context->dir . '/dev/escapeKey.js'));
         $package->get = 'return ivoPetkov.bearFrameworkAddons.escapeKey';
